@@ -1,0 +1,24 @@
+{
+    "name": "ibern/cms-mvc",
+    "description": "CMS PHP OOP MVC",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^13.0",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ibern\\CmsMvc\\": "app/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "test": [
+            "@clearCache",
+            "phpunit"
+        ],
+        "clearCache": "rm -rf cache/*",
+        "testsVerbose": "@tests -vvv"
+    }
+}

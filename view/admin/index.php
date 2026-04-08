@@ -1,0 +1,1 @@
+<h1>Benvida ao taboleiro de administración</h1>

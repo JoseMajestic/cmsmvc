@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ofertas · WebDesigno</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicon/site.webmanifest">
+  <link rel="icon" href="../assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/styles2.css">
+</head>
+<body class="ofertas-fondo">
+  <header class="topBar">
+    <div class="marca-simple">
+      <img class="logo-chico" src="../assets/branding.png" alt="WebDesigno" width="52" height="52" decoding="async" />
+      <div>
+        <p>WebDesigno</p>
+        <p class="marca-rol">Studio</p>
+      </div>
+    </div>
+    <nav class="menu-simple" aria-label="Navegación principal">
+      <a href="../index.php">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+      <a href="presupuesto.html">Presupuesto</a>
+    </nav>
+  </header>
+
+  <div class="lienzo">
+    <main class="contenido ofertas-main">
+      <section class="ofertas-hero">
+        <div class="intro-titulo">
+          <canvas class="intro-particles-canvas" aria-hidden="true"></canvas>
+          <h1>Oferta! Últimos días!</h1>
+        </div>
+        <div class="ofertas-timer" id="ofertas-timer" aria-label="Cuenta atrás">00:59:59</div>
+        <p>Productos con descuento. Filtra por categoría y talla.</p>
+      </section>
+
+      <section class="ofertas-panel" aria-label="Filtros de ofertas">
+        <div class="ofertas-filtros">
+          <label for="filtro-categoria">Categoría</label>
+          <select id="filtro-categoria" name="categoria">
+            <option value="">Todas</option>
+            <option value="pantalon">Pantalón</option>
+            <option value="jersey">Jersey</option>
+            <option value="zapatos">Zapatos</option>
+            <option value="camisa">Camisa</option>
+          </select>
+
+          <label for="filtro-talla">Talla</label>
+          <select id="filtro-talla" name="talla">
+            <option value="">Todas</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="39">39</option>
+            <option value="41">41</option>
+            <option value="49">49</option>
+          </select>
+
+          <button type="button" class="ofertas-reset" id="ofertas-reset">Limpiar</button>
+        </div>
+      </section>
+
+      <section class="ofertas-listado" aria-label="Listado de ofertas">
+        <div class="ofertas-status" id="ofertas-status" role="status" aria-live="polite"></div>
+        <div class="ofertas-grid" id="ofertas-grid"></div>
+      </section>
+    </main>
+
+  </div>
+  <footer>
+    <nav aria-label="Navegación secundaria">
+      <ul>
+        <li><a href="../index.php">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="presupuesto.html">Presupuesto</a></li>
+      </ul>
+    </nav>
+    <img src="../assets/branding.png" alt="WebDesigno" width="44" height="44" loading="lazy" decoding="async" />
+  </footer>
+
+  <div class="ofertas-modal" id="ofertas-modal" hidden>
+    <div class="ofertas-modal-backdrop" id="ofertas-modal-backdrop"></div>
+    <div class="ofertas-modal-content" role="dialog" aria-modal="true" aria-labelledby="ofertas-modal-title">
+      <button type="button" class="ofertas-modal-close" id="ofertas-modal-close" aria-label="Cerrar">×</button>
+      <img class="ofertas-modal-img" id="ofertas-modal-img" alt="" />
+      <div class="ofertas-modal-info">
+        <h2 id="ofertas-modal-title"></h2>
+        <div class="ofertas-modal-meta" id="ofertas-modal-meta"></div>
+        <div class="ofertas-modal-precio" id="ofertas-modal-precio"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/intro-particles.js" defer></script>
+  <script src="../js/ofertas.js?v=2" defer></script>
+</body>
+</html>

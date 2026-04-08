@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /public/
+
+# Redirigir todas las peticiones a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]
+
+# Opcional: eliminar el .php de las URLs
+RewriteCond %{THE_REQUEST} \s(.+?)/index\.php([?#s].*)?\s [NC]
+RewriteRule ^ %1%2 [R=301,L]

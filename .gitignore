@@ -1,0 +1,50 @@
+# Composer
+composer.phar
+/vendor/
+composer.lock
+
+# Dependencias y cache
+cache/
+node_modules/
+*.log
+
+# Archivos de configuración sensibles
+.env
+.env.local
+.env.production
+
+# Archivos temporales
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Archivos de base de datos locales
+*.sqlite
+*.db
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos generados por IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de sesión
+sessions/
+
+# Logs y errores
+error.log
+access.log
+
+# Archivos de importación/exportación SQL temporales
+*.sql.tmp
+import_*.sql
+export_*.sql
+
+# Archivos de uploads que no deben ir al repo
+uploads/
+temp/
