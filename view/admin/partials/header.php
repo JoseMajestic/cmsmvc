@@ -86,17 +86,6 @@
     ?>
 
 
-    <!-- si existen mensaxes -->
-    <?php if (isset($_SESSION["mensaxe"])) { ?>
-
-        <input type="hidden" name="tipo-mensaxe" value="<?php echo $_SESSION["mensaxe"]['tipo'] ?>">
-        <input type="hidden" name="texto-mensaxe" value="<?php echo $_SESSION["mensaxe"]['texto'] ?>">
-
-        <!-- borrar mensaxes -->
-        <?php unset($_SESSION["mensaxe"]) ?>
-    <?php } ?>
-
-
     <main>
 
         <header>
