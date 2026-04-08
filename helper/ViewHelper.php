@@ -35,7 +35,7 @@ class ViewHelper
     public function permisos($permiso = null)
     {
 
-        if (isset($_SESSION['usuario']) and ($permiso == null or $_SESSION[$permiso] == 1)) {
+        if (isset($_SESSION['usuario']) and ($permiso == null or (isset($_SESSION[$permiso]) and $_SESSION[$permiso] == 1))) {
             return true;
         } else {
             $this->redireccionConMensaxe("admin", "yellow", "No tienes permiso para realizar esta operación");

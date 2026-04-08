@@ -75,6 +75,17 @@
     <?php } ?>
 
 
+    <!-- Definir variables de sesión para el admin -->
+    <?php 
+    if (!isset($_SESSION['public'])) {
+        $_SESSION['public'] = '/public/';
+    }
+    if (!isset($_SESSION['home'])) {
+        $_SESSION['home'] = '/public/';
+    }
+    ?>
+
+
     <!-- si existen mensaxes -->
     <?php if (isset($_SESSION["mensaxe"])) { ?>
 
