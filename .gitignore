@@ -48,3 +48,9 @@ export_*.sql
 # Archivos de uploads que no deben ir al repo
 uploads/
 temp/
+
+# Proyectos anteriores (carpetas A y B)
+a/
+b/
+A/
+B/
