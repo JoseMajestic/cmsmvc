@@ -1,6 +1,9 @@
 RewriteEngine On
 RewriteBase /public/
 
+# Manejo de errores personalizado
+ErrorDocument 404 /public/index.php?error=404
+
 # Redirigir todas las peticiones a index.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
