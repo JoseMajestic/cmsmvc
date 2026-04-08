@@ -38,8 +38,13 @@
                 <label for="usuario">Usuario</label>
             </div>
             <div class="input-field col s12">
-                <input id="contrasinal" type="password" name="contrasinal" value="">
-                <label for="contrasinal">Contrasinal</label>
+                <div class="password-wrapper">
+                    <input id="contrasinal" type="password" name="contrasinal" value="">
+                    <label for="contrasinal">Contrasinal</label>
+                    <button type="button" class="password-toggle" onclick="togglePassword()">
+                        <i class="material-icons" id="eye-icon">visibility</i>
+                    </button>
+                </div>
             </div>
             <div class="input-field col s12">
                 <button class="btn waves-effect waves-light" type="submit" name="acceder">Acceder
@@ -50,18 +55,73 @@
     </form>
 </div>
 
-<!-- Información de usuarios para testing -->
-<div class="row">
-    <div class="col m12 l6">
-        <div class="card blue-grey lighten-5">
-            <div class="card-content">
-                <span class="card-title">Usuarios de prueba:</span>
-                <ul class="browser-default">
-                    <li><strong>admin</strong> / <strong>admin123</strong> (Acceso completo)</li>
-                    <li><strong>operador1</strong> / <strong>dawm2026</strong> (Solo noticias)</li>
-                    <li><strong>operador2</strong> / <strong>dawm2026</strong> (Solo noticias)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+<style>
+.password-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.password-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.password-toggle i {
+    color: #666;
+    font-size: 20px;
+}
+
+.password-toggle:hover i {
+    color: #d32f2f;
+}
+
+/* Ajustar el input para que no se solape con el botón */
+.password-wrapper input {
+    padding-right: 45px !important;
+}
+
+/* Ajustar la etiqueta cuando está activa */
+.password-wrapper input:focus + label,
+.password-wrapper input:not([value=""]) + label {
+    transform: translateY(-25px) scale(0.8);
+}
+</style>
+
+<script>
+function togglePassword() {
+    const passwordInput = document.getElementById('contrasinal');
+    const eyeIcon = document.getElementById('eye-icon');
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.textContent = 'visibility_off';
+    } else {
+        passwordInput.type = 'password';
+        eyeIcon.textContent = 'visibility';
+    }
+}
+
+// Inicializar el botón cuando el documento esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('contrasinal');
+    const eyeIcon = document.getElementById('eye-icon');
+    
+    // Asegurar que el icono inicial sea correcto
+    if (passwordInput.type === 'password') {
+        eyeIcon.textContent = 'visibility';
+    } else {
+        eyeIcon.textContent = 'visibility_off';
+    }
+});
+</script>
